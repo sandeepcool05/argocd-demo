@@ -15,9 +15,9 @@ pipeline {
     stage('Push to Docker Hub') {
             steps {
               withCredentials([string(credentialsId: 'dockerhub-token', variable: 'DOCKER_PASS')]) {
-                sh 'echo $DOCKER_PASS | docker login -u yourdockerhubusername --password-stdin'
-                sh 'docker tag myapp:latest yourdockerhubusername/myapp:latest'
-                sh 'docker push yourdockerhubusername/myapp:latest'
+                sh 'echo $DOCKER_PASS | docker login -u scool05 --password-stdin'
+                sh 'docker tag myapp:latest scool05/myapp:latest'
+                sh 'docker push scool05/myapp:latest'
               }
             }
         }        
