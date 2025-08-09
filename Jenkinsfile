@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'master', url: 'https://github.com/sandeepcool05/argocd-demo.git'
+                git branch: 'master', url: 'git@github.com:sandeepcool05/argocd-demo.git'
             }
         }
     stage('Build Docker Image') {
