@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+    stage ('Clean Workspace') {
+        steps {
+            sh 'rm -rf argocd-demo'
+        }
+    }
         stage('Clone Repo') {
             steps {
                 script {
