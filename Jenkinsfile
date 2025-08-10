@@ -4,9 +4,11 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'master', url: 'https://github.com/sandeepcool05/argocd-demo'
+                script {
+                sh 'git -c http.sslVerify=false clone https://github.com/sandeepcool05/argocd-demo.git' 
             }
         }
+    }        
     stage('Build Docker Image') {
             steps {
                 sh 'docker build -t myapp:latest .'
