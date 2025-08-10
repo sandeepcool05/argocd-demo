@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
+                git config --global http.sslVerify false
                 git branch: 'master', url: 'https://github.com/sandeepcool05/argocd-demo'
             }
         }
